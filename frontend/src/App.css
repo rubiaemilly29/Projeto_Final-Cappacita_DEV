@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #3a4c66d8;
+  min-height: 100px;
+  padding: 10px;
+  color: aliceblue;
+}
+
+.App-footer {
+  background-color: #3a4c66d8;
+  height: 80px;
+  font-size: small;
+  padding-top: 20px;
+  color: aliceblue;
+  
+}
