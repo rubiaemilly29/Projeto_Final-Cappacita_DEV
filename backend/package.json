@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rubiaemilly29/Projeto_Final-Cappacita_DEV.git"
+  },
+  "author": "Rubia Braga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rubiaemilly29/Projeto_Final-Cappacita_DEV/issues"
+  },
+  "homepage": "https://github.com/rubiaemilly29/Projeto_Final-Cappacita_DEV#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "knex": "^0.95.11",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
