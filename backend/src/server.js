@@ -5,16 +5,18 @@ const cors = require('cors')
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors())
+app.use(cors({
+  origin:'http://localhost:3000'
+}))
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
 app.post('/Rating', function (req, res) {
   const ranking = data.movieScore({
-    idMovie: req.score.idMovie,
-    title_movie: req.score.title_movie,
-    rating_score: req.score.rating_score,
+    idMovie: req.movie.idMovie,
+    title_movie: req.movie.title_movie,
+    rating_score: req.movie.rating_score,
   })
   res.send(ranking)
 })
