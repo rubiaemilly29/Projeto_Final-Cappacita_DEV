@@ -1,24 +1,20 @@
 const express = require('express')
 const app = express()
-const data = require('./database/dataBase')
-const cors = require('cors')
-const bodyParser = require('body-parser');
+var cors = require('cors')
+const data = require('./model/dataBase')
 
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors({
-  origin:'http://localhost:3000'
-}))
-app.get('/', (req, res) => {
+app.use(express.json())
+
+app.use(cors())
+
+app.get('/', (_req, res) => {
   res.send('Hello World!')
 })
 
-app.post('/Rating', function (req, res) {
-  const ranking = data.movieScore({
-    idMovie: req.movie.idMovie,
-    title_movie: req.movie.title_movie,
-    rating_score: req.movie.rating_score,
-  })
-  res.send(ranking)
+app.post('/', (req, res) => {
+  const { id, title, value } = req.body
+  data.movieScore(id, title, value)
+  res.json('oi')
 })
 
-app.listen(3003)
+app.listen(3003, console.log(`Porta 3003`))

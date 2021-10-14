@@ -2,6 +2,8 @@ import * as React from "react";
 import Rating from '@mui/material/Rating';
 import {Box} from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
+import axios from 'axios';
+
 
 const labels = {
   1: "Péssimo ",
@@ -11,10 +13,20 @@ const labels = {
   5: "Excelente"
 };
 
-export default function HoverRating() {
+export default function HoverRating({ movie }) {
   const [value, setValue] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
-    console.log(value)
+
+
+ function getvote() {
+      axios.post('http://localhost:3003/', {
+        id: movie.id, 
+        title:movie.title, 
+        value: value
+      })
+    }
+    
+
   return (
     <Box
       sx={{
@@ -30,6 +42,7 @@ export default function HoverRating() {
         precision={1.0}
         onChange={(event, newValue) => {
           setValue(newValue);
+          getvote(value, movie)
         }}
         onChangeActive={(event, newHover) => {
           setHover(newHover);

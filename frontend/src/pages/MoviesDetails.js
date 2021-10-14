@@ -27,7 +27,7 @@ function MoviesDetails(props) {
       }
       requisitionMovieInformation()
     }, [id])
-
+    console.log(movieinformation);
 
     if (movieinformation === 'Houve algum erro na pagina. Tente novamente mais tarde.') 
     return (
@@ -62,7 +62,7 @@ function MoviesDetails(props) {
                         {`Data de Lançamento ${movieinformation.release_date.split('-').reverse().join('/')}`}
                       </Card.Text>
                     </Card.Body>
-                    <HoverRating />
+                    <HoverRating movie={ movieinformation } />
                   </Card>
                 </Col>
             </Row>
